@@ -1,59 +1,120 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>MO23 Cookies</title>
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #fdf6ec;
-      color: #3e2c1c;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    img.logo {
-      width: 200px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 20px;
-      color: #5a2e1c;
-      margin-bottom: 40px;
-    }
-
-    .button {
-      background-color: #a6754d;
-      color: white;
-      text-decoration: none;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-size: 20px;
-      margin: 10px;
-      display: inline-block;
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      background-color: #8b5e3c;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MO23 Cookies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #fdf6f0;
+        }
+        header {
+            background: #fff;
+            padding: 10px 0;
+        }
+        header img {
+            height: 100px;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #333;
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px;
+        }
+        .menu img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .menu img:hover {
+            transform: scale(1.1);
+        }
+        section {
+            padding: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+        input, textarea, button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        .social {
+            margin: 20px 0;
+        }
+        .social a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
-  <img src="cookie.jpg" alt="MO23 Logo" class="logo">
+    <header>
+        <img src="cookie.png" alt="MO23 Cookies Logo">
+    </header>
 
-  <h1>أهلاً بيك في MO23 Cookies</h1>
-  <p>كوكيز فريش ومعمولة بحب ❤️</p>
+    <h1>Welcome to MO23 Cookies</h1>
 
-  <a href="order.html" class="button">اطلب دلوقتي</a>
-  <a href="menu.html" class="button">شوف المنيو</a>
+    <section class="menu">
+        <img src="choco.jpg" alt="Choco" onclick="openMenu()">
+        <img src="double.jpg" alt="Double" onclick="openMenu()">
+        <img src="lotus.jpg" alt="Lotus" onclick="openMenu()">
+        <img src="nutella.jpg" alt="Nutella" onclick="openMenu()">
+        <img src="seasonal.jpg" alt="Seasonal" onclick="openMenu()">
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At MO23 Cookies, we bake fresh, gooey, and delicious cookies every day. We believe in quality, taste, and happiness in every bite!</p>
+    </section>
+
+    <section id="order">
+        <h2>Place Your Order</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="text" placeholder="Cookie Type (e.g., Nutella)">
+            <input type="number" placeholder="Quantity" min="1" required>
+            <textarea placeholder="Any Notes?" rows="3"></textarea>
+            <button type="submit">Order Now</button>
+        </form>
+    </section>
+
+    <div class="social">
+        <a href="https://www.instagram.com/mo23cookies" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/@mo23cookies" target="_blank">TikTok</a>
+        <a href="https://wa.me/201207887740" target="_blank">WhatsApp</a>
+    </div>
+
+    <script>
+        function openMenu() {
+            alert("Full menu coming soon!");
+        }
+    </script>
 
 </body>
 </html>
