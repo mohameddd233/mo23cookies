@@ -29,10 +29,20 @@
         section {
             padding: 30px 10px;
         }
+        .menu div {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
         .menu img {
             width: 200px;
             margin: 10px;
             border-radius: 10px;
+        }
+        .menu div p {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #333;
         }
         form {
             max-width: 500px;
@@ -71,11 +81,156 @@
 
     <section id="menu" class="menu">
         <h2>قائمة الكوكيز</h2>
-        <img src="choco.jpg" alt="Choco Cookie">
-        <img src="double.jpg" alt="Double Chocolate">
-        <img src="lotus.jpg" alt="Lotus Cookie">
-        <img src="nutella.jpg" alt="Nutella Cookie">
-        <img src="seasonal.jpg" alt="Seasonal Cookie">
+
+        <div>
+            <img src="choco.jpg" alt="Choco Cookie">
+            <p>Choco</p>
+        </div>
+
+        <div>
+            <img src="double.jpg" alt="Double Chocolate">
+            <p>Double Chocolate</p>
+        </div>
+
+        <div>
+            <img src="lotus.jpg" alt="Lotus Cookie">
+            <p>Lotus</p>
+        </div>
+
+        <div>
+            <img src="nutella.jpg" alt="Nutella Cookie">
+            <p>Nutella</p>
+        </div>
+
+        <div>
+            <img src="seasonal.jpg" alt="Seasonal Cookie">
+            <p>Seasonal</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>من نحن</h2>
+        <p>في MO23 Cookies، بنحب نقدم لكم أحلى وأطعم كوكيز معمولة بحب ومكونات عالية الجودة.</p>
+    </section>
+
+    <section id="order">
+        <h2>اطلب الكوكيز بتاعتك</h2>
+        <form action="https://formspree.io/f/xovljaky" method="POST">
+            <input type="text" name="name" placeholder="اسمك" required>
+            <input type="tel" name="phone" placeholder="رقم الموبايل" required>
+            <textarea name="order" placeholder="تفاصيل الطلب" required></textarea>
+            <button type="submit">إرسال الطلب</button>
+        </form>
+    </section>
+</body>
+</html><!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MO23 Cookies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: #fff;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header img {
+            width: 120px;
+        }
+        nav a {
+            margin: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        section {
+            padding: 30px 10px;
+        }
+        .menu div {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .menu img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .menu div p {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        form {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="cookie.png" alt="MO23 Cookies Logo">
+        <nav>
+            <a href="#menu">القائمة</a>
+            <a href="#about">من نحن</a>
+            <a href="#order">اطلب الآن</a>
+        </nav>
+    </header>
+
+    <section id="menu" class="menu">
+        <h2>قائمة الكوكيز</h2>
+
+        <div>
+            <img src="choco.jpg" alt="Choco Cookie">
+            <p>Choco</p>
+        </div>
+
+        <div>
+            <img src="double.jpg" alt="Double Chocolate">
+            <p>Double Chocolate</p>
+        </div>
+
+        <div>
+            <img src="lotus.jpg" alt="Lotus Cookie">
+            <p>Lotus</p>
+        </div>
+
+        <div>
+            <img src="nutella.jpg" alt="Nutella Cookie">
+            <p>Nutella</p>
+        </div>
+
+        <div>
+            <img src="seasonal.jpg" alt="Seasonal Cookie">
+            <p>Seasonal</p>
+        </div>
     </section>
 
     <section id="about">
