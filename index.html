@@ -72,6 +72,25 @@
       color: #ffeac1;
     }
 
+    .carousel {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: auto;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
     form {
       max-width: 500px;
       margin: auto;
@@ -131,6 +150,11 @@
         display: block;
         margin: 10px 0;
       }
+
+      .carousel {
+        width: 100%;
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -149,16 +173,16 @@
     <h2>قائمة الكوكيز</h2>
     <div class="menu">
       <div class="menu-item">
-        <img src="choco.jpg" alt="Choco">
-        <p>Choco<br>Small 5 LE – Medium 7 LE – Large 10 LE</p>
+        <img src="classic.jpg" alt="كلاسيك كوكيز">
+        <p>كلاسيك كوكيز<br>Small 5 LE – Medium 7 LE – Large 10 LE</p>
       </div>
       <div class="menu-item">
         <img src="dark.jpg" alt="Dark">
         <p>Dark<br>Small 5 LE – Medium 7 LE – Large 10 LE</p>
       </div>
       <div class="menu-item">
-        <img src="lotus.jpg" alt="Lotus">
-        <p>Lotus<br>Small 5 LE – Medium 7 LE – Large 10 LE</p>
+         <img src="oreo.jpg" alt="Oreo">
+     <p>Oreo<br>Small 5 LE – Medium 7 LE – Large 10 LE</p>
       </div>
       <div class="menu-item">
         <img src="nutella.jpg" alt="Nutella">
@@ -168,10 +192,15 @@
         <img src="seasonal.jpg" alt="Seasonal">
         <p>Seasonal<br>حسب الطلب</p>
       </div>
+      <div class="menu-item">
+        <div class="carousel">
+          <img src="brookies1.jpg" class="active" alt="بروكيز 1">
+          <img src="brookies2.jpg" alt="بروكيز 2">
+        </div>
+        <p>بروكيز<br>Small 10 LE – Large 15 LE</p>
+      </div>
     </div>
-  </section>
-
-  <section id="about">
+  </section><section id="about">
     <h2>من نحن</h2>
     <p style="max-width: 600px; margin: auto; font-size: 18px;">
       في MO23 Cookies، بنحب نقدم لكم أحلى وأطعم كوكيز معمولة بحب وبمكونات عالية الجودة. كل قطعة معمولة بإيدينا، وبتوصل ليك طازة وساخنة.
@@ -184,7 +213,7 @@
       <input type="text" name="name" placeholder="اسمك" required>
       <input type="tel" name="phone" placeholder="رقم الموبايل" required>
       <textarea name="order" rows="4" placeholder="تفاصيل الطلب" required></textarea>
-        <button type="submit">إرسال الطلب</button>
+      <button type="submit">إرسال الطلب</button>
     </form>
 
     <div class="social">
@@ -200,6 +229,18 @@
       </a>
     </div>
   </section>
+
+  <script>
+    // كود تقليب صور بروكيز
+    const carouselImages = document.querySelectorAll(".carousel img");
+    let current = 0;
+
+    setInterval(() => {
+      carouselImages[current].classList.remove("active");
+      current = (current + 1) % carouselImages.length;
+      carouselImages[current].classList.add("active");
+    }, 3000);
+  </script>
 
 </body>
 </html>
