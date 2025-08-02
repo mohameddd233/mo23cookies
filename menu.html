@@ -1,86 +1,132 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>منيو MO23 Cookies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>المنيو - MO23 Cookies</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Cairo', sans-serif;
-      background-color: #fdf6ec;
-      color: #3e2c1c;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .item img {
-      width: 60px;
-      height: 60px;
+    .menu-img {
+      width: 100px;
+      height: 100px;
       object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s;
     }
 
-    .item-name {
-      font-size: 22px;
+    .menu-img:hover {
+      transform: scale(1.1);
     }
 
-    a.back {
-      display: inline-block;
-      margin-top: 50px;
-      color: #a6754d;
-      text-decoration: none;
+    .menu-title {
       font-weight: bold;
+      margin-top: 8px;
+      color: #ffeac1;
     }
 
-    a.back:hover {
-      text-decoration: underline;
+    .popup {
+      position: fixed;
+      display: none;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .popup span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="cookie.png" alt="MO23 Cookies Logo" />
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="menu.html">المنيو</a>
+      <a href="order.html">طلب</a>
+      <a href="about.html">عنّا</a>
+      <a href="contact.html">تواصل</a>
+    </nav>
+  </header>
 
-  <h1>المنيو 🍪</h1>
+  <section>
+    <h2>العروض (باكدجات)</h2>
+    <div class="menu" id="menu-packages"></div>
 
-  <div class="item">
-    <img src="choco.jpg" alt="Chocolate Chip" />
-    <div class="item-name">Chocolate Chip Classic</div>
+    <h2>المنتجات العادية</h2>
+    <div class="menu" id="menu-products"></div>
+  </section>
+
+  <div id="image-popup" class="popup">
+    <span id="close-popup">×</span>
+    <img id="popup-img" src="">
   </div>
 
-  <div class="item">
-    <img src="nutella.jpg" alt="Nutella Lava" />
-    <div class="item-name">Nutella Lava</div>
-  </div>
 
-  <div class="item">
-    <img src="lotus.jpg" alt="Lotus Caramel" />
-    <div class="item-name">Lotus Caramel</div>
-  </div>
+<!-- Popup لتكبير الصور -->
+<div id="image-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:999;">
+  <img id="popup-img" src="" style="max-width:90%; max-height:90%; border-radius:10px;">
+  <span id="close-popup" style="position:absolute; top:20px; right:30px; font-size:40px; color:white; cursor:pointer;">&times;</span>
+</div>
 
-  <div class="item">
-    <img src="double.jpg" alt="Double Chocolate" />
-    <div class="item-name">Double Chocolate</div>
-  </div>
+  <script>
+    const packages = [
+      { name: 'First Bite Box', image: 'bite-poster.jpg' },
+      { name: 'Weekend Treat Box', image: 'weekend.jpg' },
+      { name: 'Office Share Pack', image: 'office.jpg' },
+      { name: 'Family Time Deal', image: 'family.jpg' },
+      { name: 'Surprise Gift Box', image: 'gift.jpg' }
+    ];
 
-  <div class="item">
-    <img src="seasonal.jpg" alt="Seasonal" />
-    <div class="item-name">Seasonal Flavor</div>
-  </div>
+    const products = [
+      { name: 'كلاسيك كوكيز', image: 'classic.jpg' },
+      { name: 'كوكيز دارك', image: 'dark.jpg' },
+      { name: 'أوريو كوكيز', image: 'oreo.jpg' },
+      { name: 'نوتيلا كوكيز', image: 'nutella.jpg' },
+      { name: 'كوكيز موسمية', image: 'seasonal.jpg' },
+      { name: 'بروكيز', image: 'brookies2.jpg' }
+    ];
+    
 
-  <a href="index.html" class="back">← العودة للرئيسية</a>
+    function renderItems(arr, containerId) {
+      const container = document.getElementById(containerId);
+      arr.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'menu-item';
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" class="menu-img" onclick="showImage('${item.image}')">
+          <p class="menu-title">${item.name}</p>
+        `;
+        container.appendChild(div);
+      });
+    }
 
+    function showImage(src) {
+      document.getElementById("popup-img").src = src;
+      document.getElementById("image-popup").style.display = "flex";
+    }
+
+    document.getElementById("close-popup").onclick = () => {
+      document.getElementById("image-popup").style.display = "none";
+    }
+
+    renderItems(packages, 'menu-packages');
+    renderItems(products, 'menu-products');
+  </script>
+  
 </body>
 </html>

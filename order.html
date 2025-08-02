@@ -1,60 +1,110 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <title>طلب كوكيز - MO23 Cookies</title>
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #fdf6ec;
-      color: #3e2c1c;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 40px;
-    }
-
-    a.button {
-      background-color: #a6754d;
-      color: white;
-      text-decoration: none;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-size: 20px;
-      transition: 0.3s;
-      display: inline-block;
-    }
-
-    a.button:hover {
-      background-color: #8b5e3c;
-    }
-
-    a.back {
-      display: inline-block;
-      margin-top: 50px;
-      color: #a6754d;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a.back:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>اطلب دلوقتي - MO23 Cookies</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <img src="cookie.png" alt="MO23 Logo" />
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="menu.html">المنيو</a>
+      <a href="order.html">اطلب دلوقتي</a>
+      <a href="about.html">عن MO23</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </header>
 
-  <h1>اطلب الكوكيز بتاعك 🍪</h1>
+  <section>
+    <h2>اختار منتجاتك</h2>
+    <div class="menu" id="product-list">
+      <div class="menu-item">
+  <img src="classic.jpg" alt="كوكيز كلاسيك" onclick="zoomImage(this)" />
+  <p>كوكيز كلاسيك</p>
+  <select onchange="chooseSize(this, 'كوكيز كلاسيك', 'classic.jpg')">
+    <option disabled selected>اختار الحجم</option>
+    <option value="15">Small - 15ج</option>
+    <option value="25">Medium - 25ج</option>
+    <option value="35">Large - 35ج</option>
+  </select>
+</div>
 
-  <a class="button" href="https://forms.gle/W3MK8LozjCjcmtLEA" target="_blank">
-    افتح نموذج الطلب
+<!-- كوكيز دارك -->
+<div class="menu-item">
+  <img src="dark.jpg" alt="كوكيز دارك" onclick="zoomImage(this)" />
+  <p>كوكيز دارك</p>
+  <select onchange="chooseSize(this, 'كوكيز دارك', 'dark.jpg')">
+    <option disabled selected>اختار الحجم</option>
+    <option value="15">Small - 15ج</option>
+    <option value="25">Medium - 25ج</option>
+    <option value="35">Large - 35ج</option>
+  </select>
+</div>
+
+<!-- كوكيز نوتيلا -->
+<div class="menu-item">
+  <img src="nutella.jpg" alt="كوكيز نوتيلا" onclick="zoomImage(this)" />
+  <p>كوكيز نوتيلا</p>
+  <select onchange="chooseSize(this, 'كوكيز نوتيلا', 'nutella.jpg')">
+    <option disabled selected>اختار الحجم</option>
+    <option value="20">Small - 20ج</option>
+    <option value="30">Medium - 30ج</option>
+    <option value="40">Large - 40ج</option>
+  </select>
+</div>
+
+<!-- كوكيز أوريو -->
+<div class="menu-item">
+  <img src="oreo.jpg" alt="كوكيز أوريو" onclick="zoomImage(this)" />
+  <p>كوكيز أوريو</p>
+  <select onchange="chooseSize(this, 'كوكيز أوريو', 'oreo.jpg')">
+    <option disabled selected>اختار الحجم</option>
+    <option value="18">Small - 18ج</option>
+    <option value="28">Medium - 28ج</option>
+    <option value="38">Large - 38ج</option>
+  </select>
+</div>
+
+<!-- كوكيز موسمية -->
+<div class="product">
+  <a href="contact.html">
+    <img src="seasonal.jpg" alt="كوكيز مخصوص">
+    <p>كوكيز مخصوص</p>
   </a>
+</div>
 
-  <br>
-  <a href="index.html" class="back">← العودة للرئيسية</a>
+<!-- بروكيز -->
+<div class="menu-item">
+  <img src="brookies2.jpg" alt="بروكيز" onclick="zoomImage(this)" />
+  <p>بروكيز</p>
+  <button onclick="addToCart('بروكيز', 20, 'brookies2.jpg')">🛒 أضف للسلة</button>
+</div>
 
+<!-- First Bite Box -->
+<div class="menu-item">
+  <img src="bite-poster.jpg" alt="First Bite Box" onclick="zoomImage(this)" />
+  <p>First Bite Box</p>
+  <button onclick="addToCart('First Bite Box', 60, 'bite.jpg')">🛒 أضف للسلة</button>
+</div>
+
+
+
+
+  <section>
+    <h2>السلة</h2>
+    <div id="cart-preview"></div>
+    <form action="https://formspree.io/f/xovljaky" method="POST" onsubmit="return validateOrder()">
+      <input type="text" name="الاسم" placeholder="الاسم بالكامل" required />
+      <input type="text" name="رقم الهاتف" placeholder="رقم الهاتف" required />
+      <textarea name="الطلب" id="order-summary" readonly></textarea>
+      <input type="hidden" name="الإجمالي" id="order-total" />
+      <button type="submit" id="submit-btn" disabled>تأكيد الطلب</button>
+    </form>
+  </section>
+
+  <script src="order.js"></script>
 </body>
 </html>

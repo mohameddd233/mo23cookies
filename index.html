@@ -1,222 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MO23 Cookies</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: url('background.jpg');
-      background-size: cover;
-      background-position: center;
-      color: beige;
-      direction: rtl;
-    }
-
-    header {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      text-align: center;
-    }
-
-    header img {
-      width: 120px;
-    }
-
-    nav a {
-      margin: 10px;
-      color: #f5e5d8;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    section {
-      padding: 40px 20px;
-      background-color: rgba(92, 64, 51, 0.85);
-      margin: 20px auto;
-      max-width: 1000px;
-      border-radius: 15px;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #f9f4ef;
-    }
-
-    .menu {
-      text-align: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .menu-item {
-      width: 150px;
-      text-align: center;
-    }
-
-    .menu-item img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .menu-item p {
-      margin-top: 8px;
-      font-weight: bold;
-      color: #ffeac1;
-    }
-
-    .carousel {
-      position: relative;
-      width: 150px;
-      height: 150px;
-      margin: auto;
-    }
-
-    .carousel img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-      display: none;
-    }
-
-    .carousel img.active {
-      display: block;
-    }
-
-    form {
-      max-width: 500px;
-      margin: auto;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      background: #f5e5d8;
-      color: #4b2e15;
-      font-size: 16px;
-    }
-
-    button {
-      background-color: #8b5e3c;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background-color: #a06a3e;
-    }
-
-    .social {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .social a {
-      margin: 0 10px;
-      display: inline-block;
-      text-decoration: none;
-      color: #ffeac1;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .social a img {
-      width: 24px;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-
-    @media (max-width: 600px) {
-      .menu-item {
-        width: 45%;
-      }
-
-      nav a {
-        display: block;
-        margin: 10px 0;
-      }
-
-      .carousel {
-        width: 100%;
-        height: auto;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <img src="cookie.png" alt="MO23 Cookies Logo">
+    <img src="cookie.png" alt="MO23 Logo" />
     <nav>
-      <a href="#menu">القائمة</a>
-      <a href="#about">من نحن</a>
-      <a href="#order">اطلب الآن</a>
+      <a href="index.html">الرئيسية</a>  <a href="menu.html">المنيو</a> <a href="order.html">اطلب دلوقتي</a>   <a href="about.html">عن MO23</a> <a href="contact.html">تواصل معنا</a>
     </nav>
   </header>
 
-  <section id="menu">
-    <h2>قائمة الكوكيز</h2>
+  <section>
+    <h2>العروض والباكدجات</h2>
     <div class="menu">
       <div class="menu-item">
-        <img src="classic.jpg" alt="كلاسيك كوكيز">
-        <p>كلاسيك كوكيز<br>Small 6 LE – Medium 9 LE – Large 12 LE</p>
+        <img src="bite-poster.jpg" alt="First Bite Box" />
+        <p>First Bite Box - 60 جنيه</p>
       </div>
       <div class="menu-item">
-        <img src="dark.jpg" alt="Dark">
-        <p>Dark<br>Small 7 LE – Medium 10 LE – Large 13 LE</p>
+        <img src="classic.jpg" alt="Classic Offer" />
+        <p>عرض الكلاسيك - 90 جنيه</p>
       </div>
       <div class="menu-item">
-         <img src="oreo.jpg" alt="Oreo">
-     <p>Oreo<br>Small 8 LE – Medium 10 LE – Large 15 LE</p>
-      </div>
-      <div class="menu-item">
-        <img src="nutella.jpg" alt="Nutella">
-        <p>Nutella<br>Medium 12 LE – Large 16 LE</p>
-      </div>
-      <div class="menu-item">
-        <img src="seasonal.jpg" alt="Seasonal">
-        <p>Seasonal<br>حسب الطلب</p>
-      </div>
-      <div class="menu-item">
-        <div class="carousel">
-          <img src="brookies1.jpg" class="active" alt="بروكيز 1">
-          <img src="brookies2.jpg" alt="بروكيز 2">
-        </div>
-        <p>بروكيز<br>Small 12 LE – Large 18 LE –
-        full brookies cake 100 LE</p>
+        <img src="nutella.jpg" alt="Nutella Mix" />
+        <p>باكدج نوتيلا - 100 جنيه</p>
       </div>
     </div>
-  </section><section id="about">
-    <h2>من نحن</h2>
-    <p style="max-width: 600px; margin: auto; font-size: 18px;">
-      في MO23 Cookies، بنحب نقدم لكم أحلى وأطعم كوكيز معمولة بحب وبمكونات عالية الجودة. كل قطعة معمولة بإيدينا، وبتوصل ليك طازة وساخنة.
-    </p>
-  </section>
-
-  <section id="order">
-    <h2>اطلب الكوكيز بتاعتك</h2>
-    <form action="https://formspree.io/f/xovljaky" method="POST">
-      <input type="text" name="name" placeholder="اسمك" required>
-      <input type="tel" name="phone" placeholder="رقم الموبايل" required>
-      <textarea name="order" rows="4" placeholder="تفاصيل الطلب" required></textarea>
-      <button type="submit">إرسال الطلب</button>
-    </form>
-
     <div class="social">
       <h3>تابعنا على السوشيال ميديا</h3>
       <a href="https://instagram.com/mo23cookies" target="_blank">
@@ -230,18 +43,5 @@
       </a>
     </div>
   </section>
-
-  <script>
-    // كود تقليب صور بروكيز
-    const carouselImages = document.querySelectorAll(".carousel img");
-    let current = 0;
-
-    setInterval(() => {
-      carouselImages[current].classList.remove("active");
-      current = (current + 1) % carouselImages.length;
-      carouselImages[current].classList.add("active");
-    }, 3000);
-  </script>
-
 </body>
 </html>
