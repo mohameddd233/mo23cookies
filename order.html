@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -5,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>اطلب دلوقتي - MO23 Cookies</title>
   <link rel="stylesheet" href="style.css" />
-</head>
 <body>
   <header>
     <img src="cookie.png" alt="MO23 Logo" />
@@ -17,23 +17,33 @@
       <a href="contact.html">تواصل معنا</a>
     </nav>
   </header>
+<section>
+<h1>اطلب دلوقتي</h1>
 
-  <section>
-    <h2>اختار منتجاتك</h2>
-    <div class="menu" id="product-list">
-      <div class="menu-item">
-  <img src="classic.jpg" alt="كوكيز كلاسيك" onclick="zoomImage(this)" />
+<div class="product">
+  <img src="classic.jpg" onclick="zoomImage(this)" alt="Classic Cookies">
   <p>كوكيز كلاسيك</p>
   <select onchange="chooseSize(this, 'كوكيز كلاسيك', 'classic.jpg')">
-    <option disabled selected>اختار الحجم</option>
+    <option value="">اختر الحجم</option>
     <option value="15">Small - 15ج</option>
     <option value="25">Medium - 25ج</option>
     <option value="35">Large - 35ج</option>
   </select>
 </div>
 
-<!-- كوكيز دارك -->
-<div class="menu-item">
+<div class="product">
+  <img src="nutella.jpg" onclick="zoomImage(this)" alt="Nutella Cookies">
+  <p>كوكيز نوتيلا</p>
+  <select onchange="chooseSize(this, 'كوكيز نوتيلا', 'nutella.jpg')">
+    <option value="">اختر الحجم</option>
+    <option value="18">Small - 18ج</option>
+    <option value="28">Medium - 28ج</option>
+    <option value="38">Large - 38ج</option>
+  </select>
+</div>
+ 
+    
+    <div class="product">
   <img src="dark.jpg" alt="كوكيز دارك" onclick="zoomImage(this)" />
   <p>كوكيز دارك</p>
   <select onchange="chooseSize(this, 'كوكيز دارك', 'dark.jpg')">
@@ -45,7 +55,7 @@
 </div>
 
 <!-- كوكيز نوتيلا -->
-<div class="menu-item">
+<div class="product">
   <img src="nutella.jpg" alt="كوكيز نوتيلا" onclick="zoomImage(this)" />
   <p>كوكيز نوتيلا</p>
   <select onchange="chooseSize(this, 'كوكيز نوتيلا', 'nutella.jpg')">
@@ -57,7 +67,7 @@
 </div>
 
 <!-- كوكيز أوريو -->
-<div class="menu-item">
+<div class="product">
   <img src="oreo.jpg" alt="كوكيز أوريو" onclick="zoomImage(this)" />
   <p>كوكيز أوريو</p>
   <select onchange="chooseSize(this, 'كوكيز أوريو', 'oreo.jpg')">
@@ -77,34 +87,36 @@
 </div>
 
 <!-- بروكيز -->
-<div class="menu-item">
+<div class="product">
   <img src="brookies2.jpg" alt="بروكيز" onclick="zoomImage(this)" />
   <p>بروكيز</p>
   <button onclick="addToCart('بروكيز', 20, 'brookies2.jpg')">🛒 أضف للسلة</button>
 </div>
 
 <!-- First Bite Box -->
-<div class="menu-item">
+<div class="product">
   <img src="bite-poster.jpg" alt="First Bite Box" onclick="zoomImage(this)" />
   <p>First Bite Box</p>
-  <button onclick="addToCart('First Bite Box', 60, 'bite.jpg')">🛒 أضف للسلة</button>
+  <button onclick="addToCart('First Bite Box', 60, 'bite-poster.jpg')">🛒 أضف للسلة</button>
 </div>
+<section>
 
+<div id="cart-preview"></div>
+<div id="total-display"></div>
 
+<form action="https://formspree.io/f/xovljaky" method="POST" onsubmit="return validateOrder()">
+  <input type="text" name="name" placeholder="اسمك" required><br><br>
+  <input type="text" name="phone" placeholder="رقم الموبايل" required><br><br>
+  <textarea name="order-details" id="order-summary" placeholder="تفاصيل الطلب" rows="5" required></textarea><br><br>
+  <input type="text" name="total" id="order-total" readonly><br><br>
+  <button id="submit-btn" type="submit" disabled>تأكيد الطلب</button>
+</form>
 
+<script src="order.js"></script>
 
-  <section>
-    <h2>السلة</h2>
-    <div id="cart-preview"></div>
-    <form action="https://formspree.io/f/xovljaky" method="POST" onsubmit="return validateOrder()">
-      <input type="text" name="الاسم" placeholder="الاسم بالكامل" required />
-      <input type="text" name="رقم الهاتف" placeholder="رقم الهاتف" required />
-      <textarea name="الطلب" id="order-summary" readonly></textarea>
-      <input type="hidden" name="الإجمالي" id="order-total" />
-      <button type="submit" id="submit-btn" disabled>تأكيد الطلب</button>
-    </form>
-  </section>
-
-  <script src="order.js"></script>
 </body>
+</html>
+
+
+
 </html>
