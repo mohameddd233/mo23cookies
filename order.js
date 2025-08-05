@@ -1,3 +1,4 @@
+
 let cart = [];
 let total = 0;
 
@@ -19,6 +20,7 @@ function updateCart() {
   const preview = document.getElementById('cart-preview');
   const summary = document.getElementById('order-summary');
   const totalInput = document.getElementById('order-total');
+  const totalDisplay = document.getElementById('total-display');
   const submitBtn = document.getElementById('submit-btn');
 
   preview.innerHTML = '';
@@ -31,11 +33,12 @@ function updateCart() {
       ${item.name} - ${item.price}ج
     `;
     preview.appendChild(div);
-    summaryText +=' ${item.name} - ${item.price}ج\n';
+    summaryText += `${item.name} - ${item.price}ج\n`;
   });
 
-  summary.value = summaryText;
+  summary.value = summaryText.trim();
   totalInput.value = total + ' جنيه';
+  totalDisplay.innerText = 'الإجمالي: ' + total + ' جنيه';
   submitBtn.disabled = total < 30;
 }
 
