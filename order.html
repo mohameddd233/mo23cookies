@@ -25,9 +25,9 @@
   <p>كوكيز كلاسيك</p>
   <select onchange="chooseSize(this, 'كوكيز كلاسيك', 'classic.jpg')">
     <option value="">اختر الحجم</option>
-    <option value="15">Small - 15ج</option>
-    <option value="25">Medium - 25ج</option>
-    <option value="35">Large - 35ج</option>
+    <option value="15">Small - 6ج</option>
+    <option value="25">Medium - 9ج</option>
+    <option value="35">Large - 12ج</option>
   </select>
 </div>
 
@@ -36,9 +36,8 @@
   <p>كوكيز نوتيلا</p>
   <select onchange="chooseSize(this, 'كوكيز نوتيلا', 'nutella.jpg')">
     <option value="">اختر الحجم</option>
-    <option value="18">Small - 18ج</option>
-    <option value="28">Medium - 28ج</option>
-    <option value="38">Large - 38ج</option>
+    <option value="28">Medium - 12ج</option>
+    <option value="38">Large - 16ج</option>
   </select>
 </div>
  
@@ -48,23 +47,13 @@
   <p>كوكيز دارك</p>
   <select onchange="chooseSize(this, 'كوكيز دارك', 'dark.jpg')">
     <option disabled selected>اختار الحجم</option>
-    <option value="15">Small - 15ج</option>
-    <option value="25">Medium - 25ج</option>
-    <option value="35">Large - 35ج</option>
+    <option value="15">Small - 7ج</option>
+    <option value="25">Medium - 10ج</option>
+    <option value="35">Large - 13ج</option>
   </select>
 </div>
 
-<!-- كوكيز نوتيلا -->
-<div class="product">
-  <img src="nutella.jpg" alt="كوكيز نوتيلا" onclick="zoomImage(this)" />
-  <p>كوكيز نوتيلا</p>
-  <select onchange="chooseSize(this, 'كوكيز نوتيلا', 'nutella.jpg')">
-    <option disabled selected>اختار الحجم</option>
-    <option value="20">Small - 20ج</option>
-    <option value="30">Medium - 30ج</option>
-    <option value="40">Large - 40ج</option>
-  </select>
-</div>
+
 
 <!-- كوكيز أوريو -->
 <div class="product">
@@ -72,9 +61,9 @@
   <p>كوكيز أوريو</p>
   <select onchange="chooseSize(this, 'كوكيز أوريو', 'oreo.jpg')">
     <option disabled selected>اختار الحجم</option>
-    <option value="18">Small - 18ج</option>
-    <option value="28">Medium - 28ج</option>
-    <option value="38">Large - 38ج</option>
+    <option value="18">Small - 8ج</option>
+    <option value="28">Medium - 10ج</option>
+    <option value="38">Large - 15ج</option>
   </select>
 </div>
 
@@ -90,9 +79,14 @@
 <div class="product">
   <img src="brookies2.jpg" alt="بروكيز" onclick="zoomImage(this)" />
   <p>بروكيز</p>
-  <button onclick="addToCart('بروكيز', 20, 'brookies2.jpg')">🛒 أضف للسلة</button>
+  <button onclick="addToCart('قطعة بروكيز', 20 , 'brookies2.jpg')">🛒 أضف للسلة</button>
 </div>
-
+<!-- بروكيز كامله-->
+<div class="product">
+  <img src="brookies2.jpg" alt="كيكه بروكيز كامله" onclick="zoomImage(this)" />
+  <p>كيكه بروكيز كامله</p>
+  <button onclick="addToCart(' كيكه بروكيز كامله', 120 , 'brookies2.jpg')">🛒 أضف للسلة</button>
+</div>
 <!-- First Bite Box -->
 <div class="product">
   <img src="bite-poster.jpg" alt="First Bite Box" onclick="zoomImage(this)" />
@@ -120,3 +114,4 @@
 
 
 </html>
+
