@@ -10,16 +10,28 @@ body {
   color: beige;
   direction: rtl;
 }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap; /* مهم للهواتف */
+}
+
 .social-icons img {
-  width: 30px;  /* كان كبير، خليه أصغر */
-  height: 30px;
-  margin: 0 10px;
-  transition: transform 0.3s ease;
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+  display: block;
 }
 
 .social-icons img:hover {
   transform: scale(1.2);
 }
+
+
 
 /* رأس الصفحة */
 header {
