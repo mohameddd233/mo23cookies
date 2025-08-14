@@ -25,9 +25,9 @@
   <p>كوكيز كلاسيك</p>
   <select onchange="chooseSize(this, 'كوكيز كلاسيك', 'classic.jpg')">
     <option value="">اختر الحجم</option>
-    <option value="6">Small - 6ج</option>
-    <option value="9">Medium - 9ج</option>
-    <option value="12">Large - 12ج</option>
+    <option value="15">Small - 15ج</option>
+    <option value="25">Medium - 25ج</option>
+    <option value="35">Large - 35ج</option>
   </select>
 </div>
 
@@ -36,8 +36,9 @@
   <p>كوكيز نوتيلا</p>
   <select onchange="chooseSize(this, 'كوكيز نوتيلا', 'nutella.jpg')">
     <option value="">اختر الحجم</option>
-    <option value="12">Medium - 12ج</option>
-    <option value="16">Large - 16ج</option>
+    <option value="18">Small - 18ج</option>
+    <option value="28">Medium - 28ج</option>
+    <option value="38">Large - 38ج</option>
   </select>
 </div>
  
@@ -47,13 +48,23 @@
   <p>كوكيز دارك</p>
   <select onchange="chooseSize(this, 'كوكيز دارك', 'dark.jpg')">
     <option disabled selected>اختار الحجم</option>
-    <option value="7">Small - 7ج</option>
-    <option value="10">Medium - 10ج</option>
-    <option value="13">Large - 13ج</option>
+    <option value="15">Small - 15ج</option>
+    <option value="25">Medium - 25ج</option>
+    <option value="35">Large - 35ج</option>
   </select>
 </div>
 
-
+<!-- كوكيز نوتيلا -->
+<div class="product">
+  <img src="nutella.jpg" alt="كوكيز نوتيلا" onclick="zoomImage(this)" />
+  <p>كوكيز نوتيلا</p>
+  <select onchange="chooseSize(this, 'كوكيز نوتيلا', 'nutella.jpg')">
+    <option disabled selected>اختار الحجم</option>
+    <option value="20">Small - 20ج</option>
+    <option value="30">Medium - 30ج</option>
+    <option value="40">Large - 40ج</option>
+  </select>
+</div>
 
 <!-- كوكيز أوريو -->
 <div class="product">
@@ -61,9 +72,9 @@
   <p>كوكيز أوريو</p>
   <select onchange="chooseSize(this, 'كوكيز أوريو', 'oreo.jpg')">
     <option disabled selected>اختار الحجم</option>
-    <option value="8">Small - 8ج</option>
-    <option value="10">Medium - 10ج</option>
-    <option value="15">Large - 15ج</option>
+    <option value="18">Small - 18ج</option>
+    <option value="28">Medium - 28ج</option>
+    <option value="38">Large - 38ج</option>
   </select>
 </div>
 
@@ -79,21 +90,129 @@
 <div class="product">
   <img src="brookies2.jpg" alt="بروكيز" onclick="zoomImage(this)" />
   <p>بروكيز</p>
-  <button onclick="addToCart('قطعة بروكيز', 20 , 'brookies2.jpg')">🛒 أضف للسلة</button>
+  <button onclick="addToCart('بروكيز', 20, 'brookies2.jpg')">🛒 أضف للسلة</button>
 </div>
-<!-- بروكيز كامله-->
-<div class="product">
-  <img src="brookies2.jpg" alt="كيكه بروكيز كامله" onclick="zoomImage(this)" />
-  <p>كيكه بروكيز كامله</p>
-  <button onclick="addToCart(' كيكه بروكيز كامله', 120 , 'brookies2.jpg')">🛒 أضف للسلة</button>
-</div>
+
 <!-- First Bite Box -->
 <div class="product">
   <img src="bite-poster.jpg" alt="First Bite Box" onclick="zoomImage(this)" />
   <p>First Bite Box</p>
   <button onclick="addToCart('First Bite Box', 60, 'bite-poster.jpg')">🛒 أضف للسلة</button>
 </div>
-<section>
+
+        <h2>🧁 Macarons - ماكرون</h2>
+        
+        <div class="product-grid">
+          
+            <div class="product" data-name="Macarons Bundle Of 3" data-price="80" data-image="10.jpeg">
+                <img src="10.jpeg" alt="Macarons Bundle Of 3">
+                <h3>Macarons Bundle Of 3 - ماكرون ٣ قطع</h3>
+                               <button onclick="addToCart('Macarons Bundle Of 3', 80, '10.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Kiwi Macaron" data-price="30" data-image="1.jpeg">
+                <img src="1.jpeg" alt="Kiwi Macaron">
+                <h3>Kiwi Macaron - ماكرون كيوي</h3>
+                  <button onclick="addToCart('Kiwi Macaron', 30, '1.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Pistachio Macaron" data-price="30" data-image="2.jpeg">
+                <img src="2.jpeg" alt="Pistachio Macaron">
+                <h3>Pistachio Macaron - ماكرون فستق</h3>
+                <button onclick="addToCart('Pistachio Macaron', 30, '2.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Bluberry Macaron" data-price="30" data-image="3.jpeg">
+                <img src="3.jpeg" alt="Bluberry Macaron">
+                <h3>Bluberry Macaron - ماكرون توت أزرق</h3>
+               <button onclick="addToCart('Bluberry Macaron', 30, '3.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Lemon Macaron" data-price="30" data-image="4.jpeg">
+                <img src="4.jpeg" alt="Lemon Macaron">
+                <h3>Lemon Macaron - ماكرون ليمون</h3>
+                              <button onclick="addToCart('Lemon Macaron', 30, '4.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Rasberry Macaron" data-price="30" data-image="5.jpeg">
+                <img src="5.jpeg" alt="Rasberry Macaron">
+                <h3>Rasberry Macaron - ماكرون توت أحمر</h3>
+                               <button onclick="addToCart('Rasberry Macaron', 30, '5.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Caramel Macaron" data-price="30" data-image="6.jpeg">
+                <img src="6.jpeg" alt="Caramel Macaron">
+                <h3>Caramel Macaron - ماكرون كراميل</h3>
+                              <button onclick="addToCart('Caramel Macaron', 30, '6.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Lotus Macaron" data-price="30" data-image="7.jpeg">
+                <img src="7.jpeg" alt="Lotus Macaron">
+                <h3>Lotus Macaron - ماكرون لوتس</h3>
+                             <button onclick="addToCart('Lotus Macaron', 30, '7.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Strawberry Macaron" data-price="30" data-image="8.jpeg">
+                <img src="8.jpeg" alt="Strawberry Macaron">
+                <h3>Strawberry Macaron - ماكرون فراولة</h3>
+                               <button onclick="addToCart('Strawberry Macaron', 30, '8.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Coconut Macaron" data-price="30" data-image="9.jpeg">
+                <img src="9.jpeg" alt="Coconut Macaron">
+                <h3>Coconut Macaron - ماكرون جوز هند</h3>
+                               <button onclick="addToCart('Coconut Macaron', 30, '9.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+          
+
+            <div class="product" data-name="Vanilla Macaron" data-price="30" data-image="11.jpeg">
+                <img src="11.jpeg" alt="Vanilla Macaron">
+                <h3>Vanilla Macaron - ماكرون فانيليا</h3>
+                               <button onclick="addToCart('Vanilla Macaron', 30, '11.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Coffee Macaron" data-price="30" data-image="12.jpeg">
+                <img src="12.jpeg" alt="Coffee Macaron">
+                <h3>Coffee Macaron - ماكرون قهوة</h3>
+                              <button onclick="addToCart('Coffee Macaron', 30, '12.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Orange Macaron" data-price="30" data-image="13.jpeg">
+                <img src="13.jpeg" alt="Orange Macaron">
+                <h3>Orange Macaron - ماكرون برتقال</h3>
+                               <button onclick="addToCart('Orange Macaron', 30, '13.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Choco Macaron" data-price="30" data-image="14.jpeg">
+                <img src="14.jpeg" alt="Choco Macaron">
+                <h3>Choco Macaron - ماكرون شوكولاتة</h3>
+                               <button onclick="addToCart('Choco Macaron', 30, '14.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+            <div class="product" data-name="Cookies Cream Macaron" data-price="30" data-image="15.jpeg">
+                <img src="15.jpeg" alt="Cookies Cream Macaron">
+                <h3>Cookies Cream Macaron - ماكرون كوكي كريم</h3>
+                               <button onclick="addToCart('Cookies Cream Macaron', 30, '15.jpeg')">🛒 أضف للسلة</button>
+
+            </div>
+
+        </div>
+    </section>
 
 <div id="cart-preview"></div>
 <div id="total-display"></div>
@@ -108,12 +227,26 @@
 
 <script src="order.js"></script>
 
-        <p class="copyright">© 2025 MO23 Cookies. All rights reserved.</p>
-          <p class="copyright">© 2025 DISGINED BY MOHAMED ALI. All rights reserved.</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب - MO23 Cookies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>MO23 Cookies - Order</h1>
+</header>
 
 
+<script src="order.js"></script>
+</body>
+</html>
 
 
 
